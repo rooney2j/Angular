@@ -16,51 +16,23 @@
 
 <div class="container">
   <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 shadow-sm">
+
+    <div class="card mb-4 shadow-sm" *ngFor="let paquete of paquetes">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Básico</h4>
+        <h4 class="my-0 font-weight-normal">{{ paquete.titulo }}</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">{{ currency1 | currency:'USD':'symbol':'3.0-0' }}<small class="text-muted">/{{ periodo | lowercase }}</small></h1>
+        <h1 class="card-title pricing-card-title">{{ paquete.precio | currency: paquete.currency:'symbol':'.0-0' }}<small class="text-muted">/{{ paquete.mes | lowercase }}</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>Redes sociales</li>
-          <li>Branding</li>
-          <li>Diseño de imagen</li>
-          <li>-</li>
+          <li>{{ paquete.d1 }}</li>
+          <li>{{ paquete.d2 }}</li>
+          <li>{{ paquete.d3 }}</li>
+          <li>{{ paquete.d4 }}</li>
         </ul>
         <button type="button" class="btn btn-lg btn-block btn-outline-primary">Adquirir</button>
       </div>
     </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Recomendado</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">{{ currency2 | currency:'PEN':'symbol':'3.0-0' }}<small class="text-muted">/{{ periodo | lowercase }}</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>Redes sociales</li>
-          <li>Branding</li>
-          <li>Diseño de imagen</li>
-          <li>Video</li>
-        </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Adquirir</button>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Avanzado</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">{{ currency3 | currency:'EUR':'symbol':'3.0-0' }}<small class="text-muted">/{{ periodo | lowercase }}</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>Redes sociales</li>
-          <li>Branding</li>
-          <li>Imagen/Video</li>
-          <li>Community Manager</li>
-        </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Adquirir</button>
-      </div>
-    </div>
+
   </div>
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
